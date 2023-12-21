@@ -7,10 +7,11 @@ var moveX = 0;
 var moveZ = 0;
 var stats;
 
-setTimeout(() => {
-    start()
+wait()
 
-}, 5000);
+function wait() {
+    if (typeof THREE === "undefined") { requestAnimationFrame(wait) } else { start() }
+}
 
 function start() {
     scene = new THREE.Scene()
